@@ -30,5 +30,5 @@ module.exports = (ctx, next) => {
 
 const createLogMsg = (ctx, ms) => {
     const {id, username, first_name, last_name} = ctx.from;
-    return ['Answered in', ms, 'ms to username', username, 'full name', first_name, last_name, 'id', id].join(' ');
+    return [new Date().toISOString(), 'Answered in', ms, 'ms to username', username, 'full name', first_name, last_name, 'id', id].join(' ');
 }
