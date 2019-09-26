@@ -1,12 +1,27 @@
 const Markup = require('telegraf/markup');
+const scripts = require('./scripts');
 
-const getWelcomeMessage = (ctx) => "Welcom message";
-const getAnswer = (ctx) => "Random text";
-const getFallbackMessage = (ctx) => "Fallback message";
-const markup = Markup.keyboard(['/tell_me_smth'])
+const getWelcomeMessage = (ctx) => buildPhrase(scripts.welcomeMessage);
+const getAnswer = (ctx) => buildPhrase(scripts.answer);
+const getFallbackMessage = (ctx) => buildPhrase(scripts.fallbackMessage);
+const question = scripts.questionList;
+const markup = Markup.keyboard(question)
         .oneTime()
         .extra();
-const question = 'tell_me_smth';
+
+
+const buildPhrase = script => {
+    let phrase = '';
+    for(let i = 0; i < script.length; ++i) {
+        phrase += getRnd(script[i]) + ' ';
+    }
+    return phrase.trim();
+}
+
+const getRnd = arr => {
+    const rnd = Math.floor(Math.random() * arr.length);
+    return arr[rnd];
+}
 
 
 module.exports = {
