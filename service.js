@@ -1,9 +1,9 @@
 const Markup = require('telegraf/markup');
 const scripts = require('./scripts');
 
-const getWelcomeMessage = (ctx) => buildPhrase(scripts.welcomeMessage);
-const getAnswer = (ctx) => buildPhrase(scripts.answer);
-const getFallbackMessage = (ctx) => buildPhrase(scripts.fallbackMessage);
+const getWelcomeMessage = ctx => buildPhrase(scripts.welcomeMessage);
+const getAnswer = ctx => buildPhrase(scripts.answer);
+const getFallbackMessage = ctx => buildPhrase(scripts.fallbackMessage);
 const question = scripts.questionList;
 const markup = Markup.keyboard(question)
         .oneTime()
