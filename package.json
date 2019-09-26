@@ -1,0 +1,14 @@
+{
+  "name": "deputat_by_bot",
+  "version": "1.0.0",
+  "description": "telegram bot that mimics most of deputats from Belarus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DzianisH",
+  "license": "MIT",
+  "dependencies": {
+    "telegraf": "^3.32.0"
+  }
+}
