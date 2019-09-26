@@ -11,11 +11,11 @@ const markup = Markup.keyboard(question)
 
 
 const buildPhrase = script => {
-    let phrase = '';
+    let phrase = [];
     for(let i = 0; i < script.length; ++i) {
-        phrase += getRnd(script[i]) + ' ';
+        phrase.push(getRnd(script[i]));
     }
-    return phrase.trim();
+    return phrase.join(" ");
 }
 
 const getRnd = arr => {
